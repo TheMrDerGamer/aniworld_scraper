@@ -69,11 +69,11 @@ def main():
             season_path_movies = f"{output_path}/Movies"
             os.makedirs(season_path_movies, exist_ok=True)
         elif dlMode.lower() == 'series':
-            season_path_series = f"{output_path}/Season {season:02}"
+            season_path_series = f"{output_path}/Staffel {season:2}"
             os.makedirs(season_path_series, exist_ok=True)
         else:
             season_path_movies = f"{output_path}/Movies"
-            season_path_series = f"{output_path}/Season {season:02}"
+            season_path_series = f"{output_path}/Staffel {season:2}"
             os.makedirs(season_path_movies, exist_ok=True)
             os.makedirs(season_path_series, exist_ok=True)
 
@@ -117,7 +117,7 @@ def main():
         elif dlMode.lower() == 'series':
             for episode in range(int(episode_count_series)):
                 episode = episode + 1
-                file_name = "{}/{} - s{:02}e{:02} - {}.mp4".format(season_path_series, name, season, episode, language)
+                file_name = "{}/S{:02}E{:02}.mp4".format(season_path_series, season, episode)
                 logger.info("File name will be: " + file_name)
                 if not already_downloaded(file_name):
                     link = url + "staffel-{}/episode-{}".format(season, episode)
@@ -166,7 +166,7 @@ def main():
                     threadpool.append(create_new_download_thread(cache_url, file_name, provider))
             for episode in range(int(episode_count_series)):
                 episode = episode + 1
-                file_name = "{}/{} - s{:02}e{:02} - {}.mp4".format(season_path_series, name, season, episode, language)
+                file_name = "{}/S{:02}E{:02}.mp4".format(season_path_series, season, episode)
                 logger.info("File name will be: " + file_name)
                 if not already_downloaded(file_name):
                     link = url + "staffel-{}/episode-{}".format(season, episode)
