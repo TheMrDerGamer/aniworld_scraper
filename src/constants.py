@@ -28,12 +28,12 @@ APP_VERSION = "v01-10-00"
 type_of_media = parse_cli_arguments("anime", 1)  # choose 'serie' or 'anime'
 name = parse_cli_arguments("Name-Goes-Here", 2)
 language = parse_cli_arguments("Deutsch", 3)
-dlMode = parse_cli_arguments("Series", 4)  # Options: Movies, Series, All
+dlMode = parse_cli_arguments("series", 4)  # Options: Movies, Series, All
 season_override = parse_cli_arguments(0, 5)  # 0 = no override. 1 = season 1. etc...
 cliProvider = parse_cli_arguments("VOE", 6)  # 0 = no override. 1 = season 1. etc...
 episode_override = 0  # 0 = no override. 1 = episode 1. etc...
-ddos_protection_calc = 5
-ddos_wait_timer = 180  # in seconds
+ddos_protection_calc = 10
+ddos_wait_timer = 60  # in seconds
 output_root = "output"
 output_name = name
 output_path = f"{output_root}/{type_of_media}/{output_name}"
