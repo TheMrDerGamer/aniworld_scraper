@@ -5,7 +5,7 @@ set SCRIPT_PATH=main.py
 set TYPE=anime
 set NAME=Name-Goes-Here
 set LANGUAGUE=Deutsch
-set DLMODE=Series
+set DLMODE=series
 set SEASON=0
 set PROVIDER=VOE
 
